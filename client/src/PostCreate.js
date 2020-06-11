@@ -16,7 +16,7 @@ const PostCreate = () => {
   return (
     <section className="section">
       <div className="container">
-        <h1 className="title">Create Post</h1>
+        <h2 className="title">Create Post</h2>
         <form onSubmit={handleSubmit}>
           <div className="field">
             <label className="label">Title</label>
