@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+import { addPost } from './api'
 
 const PostCreate = () => {
   const [title, setTitle] = useState('')
@@ -8,9 +8,7 @@ const PostCreate = () => {
   }
   const handleSubmit = async event => {
     event.preventDefault()
-    await axios.post(`${process.env.REACT_APP_POSTS_SERVICE}/posts`, {
-      title,
-    })
+    await addPost(title)
     setTitle('')
   }
   return (
