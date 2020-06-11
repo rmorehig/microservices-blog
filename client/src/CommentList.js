@@ -1,18 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { getComments } from './api'
+import React from 'react'
 
-const CommentList = ({ postId }) => {
-  const [comments, setComments] = useState({})
-
-  useEffect(() => {
-    getComments({ postId }).then(({ data }) => {
-      setComments(data)
-    })
-  }, [postId])
-
+const CommentList = ({ comments }) => {
   return (
     <ul>
-      {Object.values(comments).map(({ id, content }) => (
+      {comments.map(({ id, content }) => (
         <li key={id}>{content}</li>
       ))}
     </ul>

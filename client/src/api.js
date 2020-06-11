@@ -7,7 +7,7 @@ export const addPost = async ({ title }) => {
 }
 
 export const getPosts = async () => {
-  return await axios.get(`${process.env.REACT_APP_POSTS_SERVICE}/posts`)
+  return await axios.get(`${process.env.REACT_APP_QUERY_SERVICE}/posts`)
 }
 
 export const addComment = async ({ postId, content }) => {

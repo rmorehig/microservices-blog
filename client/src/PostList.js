@@ -9,6 +9,7 @@ const PostList = () => {
   useEffect(() => {
     getPosts().then(({ data }) => {
       setPosts(data)
+      console.log(data)
     })
   }, [])
 
@@ -17,7 +18,7 @@ const PostList = () => {
       <div className="container">
         <h2 className="title">Post List</h2>
         <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
-          {Object.values(posts).map(({ id, title }) => (
+          {Object.values(posts).map(({ id, title, comments }) => (
             <li
               key={id}
               style={{
@@ -32,7 +33,7 @@ const PostList = () => {
                 </div>
                 <div className="card-content">
                   <div className="content">
-                    <CommentList postId={id} />
+                    <CommentList comments={comments} />
                     <CommentCreate postId={id} />
                   </div>
                 </div>
