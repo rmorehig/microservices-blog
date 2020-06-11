@@ -3,8 +3,8 @@ const bodyParser = require('body-parser')
 const { randomBytes } = require('crypto')
 
 const app = express()
-app.use(bodyParser)
-
+app.use(bodyParser.json())
+//sdssd
 const posts = {}
 
 app.get('/posts', (req, res) => {
