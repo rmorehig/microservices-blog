@@ -8,7 +8,7 @@ const PostCreate = () => {
   }
   const handleSubmit = async event => {
     event.preventDefault()
-    await addPost(title)
+    await addPost({ title })
     setTitle('')
   }
   return (
