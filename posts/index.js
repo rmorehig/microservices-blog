@@ -19,14 +19,14 @@ app.post('/posts', async (req, res) => {
   const { title } = req.body
   posts[id] = {
     id,
-    title,
+    title
   }
   await axios.post('http://localhost:4005/events', {
     type: 'PostCreated',
     data: {
       id,
-      title,
-    },
+      title
+    }
   })
   res.status(201).send(posts[id])
 })
@@ -37,6 +37,6 @@ app.post('/events', (req, res) => {
 })
 
 app.listen(4000, (req, res) => {
-  console.log('v2 running now')
+  console.log('v3 running now')
   console.log('Posts service listening on 4000')
 })
